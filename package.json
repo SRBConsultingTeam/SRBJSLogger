@@ -1,0 +1,31 @@
+{
+  "name": "srbjslogger",
+  "version": "1.3.17",
+  "description": "SRB logging library for javascript",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "build-readme": "npx @wcj/html-to-markdown-cli ./test/SRBJSLoggerDemoApp/index.html && cp ./dist/index.html.md ./README.md && cp ./test/SRBJSLoggerDemoApp/ressources/images/* ./ressources/images/",
+    "watch:js": "onchange 'src/*.js' -- npm run build",
+    "watch:readme": "onchange 'test/SRBJSLoggerDemoApp/index.html' -- npm run build-readme"
+  },
+  "keywords": [
+    "logger",
+    "srb",
+    "log"
+  ],
+  "author": "Michael Henninger - SRB Consulting Team GmbH <m.henninger@srb.at> (https://www.srb.at/)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-loader": "^9.1.3",
+    "babel-register": "^6.26.0",
+    "json-loader": "^0.5.7",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "onchange": "^7.1.0"
+  }
+}

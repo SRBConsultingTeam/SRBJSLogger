@@ -1,0 +1,23 @@
+{
+  "name": "srbjslogger-demo-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "@ui5/webcomponents": "^1.16.0",
+    "@ui5/webcomponents-fiori": "^1.16.0",
+    "@ui5/webcomponents-icons": "^1.16.0",
+    "@ui5/webcomponents-icons-business-suite": "^1.16.0",
+    "@ui5/webcomponents-icons-tnt": "^1.16.0",
+    "@wcj/html-to-markdown": "^1.0.1",
+    "srbjslogger": "^1.2.0"
+  }
+}

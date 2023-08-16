@@ -1,0 +1,11 @@
+import "@ui5/webcomponents/dist/Button.js";
+import "@ui5/webcomponents/dist/MessageStrip.js";
+import "@ui5/webcomponents-fiori/dist/Bar.js";
+import "@ui5/webcomponents-fiori/dist/SideNavigation.js";
+import "@ui5/webcomponents-fiori/dist/SideNavigationItem.js";
+import "@ui5/webcomponents-fiori/dist/SideNavigationSubItem.js";
+import "@ui5/webcomponents-fiori/dist/ShellBar";
+import "@ui5/webcomponents-icons/dist/AllIcons.js";
+import "@ui5/webcomponents-icons-tnt/dist/AllIcons.js";
+import "@ui5/webcomponents-icons-business-suite/dist/AllIcons.js";
+import "@ui5/webcomponents/dist/Badge";

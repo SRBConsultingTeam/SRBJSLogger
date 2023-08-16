@@ -1,11 +1,11 @@
 {
   "name": "srbjslogger",
-  "version": "1.3.17",
+  "version": "1.4.2",
   "description": "SRB logging library for javascript",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
+    "build": "webpack && cp SRBJSLogger.min.js ./test/SRBJSLoggerDemoApp/ressources/SRBJSLogger.min.js",
     "build-readme": "npx @wcj/html-to-markdown-cli ./test/SRBJSLoggerDemoApp/index.html && cp ./dist/index.html.md ./README.md && cp ./test/SRBJSLoggerDemoApp/ressources/images/* ./ressources/images/",
     "watch:js": "onchange 'src/*.js' -- npm run build",
     "watch:readme": "onchange 'test/SRBJSLoggerDemoApp/index.html' -- npm run build-readme"
@@ -27,5 +27,9 @@
   },
   "dependencies": {
     "onchange": "^7.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SRBConsultingTeam/SRBJSLogger.git"
   }
 }

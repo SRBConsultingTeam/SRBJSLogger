@@ -1,7 +1,35 @@
+const meta = {};
+
+util = {
+  setScope: function (scope) {
+    meta.scope = scope;
+  },
+  setTopic: function (topic) {
+    meta.topic = topic;
+  },
+};
+
+init = function (scope, topic, opt) {
+  if (opt === undefined) {
+    opt = {};
+  }
+
+  util.setScope(scope);
+  util.setTopic(topic);
+
+  if (opt.verbose === true) {
+    console.log(
+      `%cSRBJSLogger %cInitialized`,
+      "background-color: #273a7c;color: #fff;padding: 3px 2px 3px 3px;border: 1px solid #273a7c;border-radius: 3px 0 0 3px;font-family: Roboto,Verdana,Geneva,sans-serif;text-shadow: 0 1px 0 rgba(1, 1, 1, 0.3)",
+      "background-color: transparent;color: #535;padding: 3px 3px 3px 2px;border: 1px solid #273a7c; border-radius: 0 3px 3px 0;font-family: Roboto,Verdana,Geneva,sans-serif"
+    );
+  }
+};
+
 getVersionInfo = function () {
   var packageJson = require("../package.json");
   var version = packageJson.version;
-  console.log(version);
+
   console.log(
     `%cSRBJSLogger %c` + version,
     "background-color: #273a7c;color: #fff;padding: 3px 2px 3px 3px;border: 1px solid #273a7c;border-radius: 3px 0 0 3px;font-family: Roboto,Verdana,Geneva,sans-serif;text-shadow: 0 1px 0 rgba(1, 1, 1, 0.3)",
@@ -10,9 +38,16 @@ getVersionInfo = function () {
   return version;
 };
 
-log = function (title, text) {
+log = function (title, text, config) {
+  if (config === undefined) {
+    config = {};
+  }
+
+  var scope = config.scope || meta.scope || "?";
+  var topic = config.topic || meta.topic || "?";
+
   console.log(
-    `%cSRB %cWorkspaces %c` + title + " %c" + text,
+    "%c" + scope + " %c" + topic + " %c" + title + " %c" + text,
     "background-color: #273a7c;color: #fff;padding: 3px 2px 3px 3px;border: 1px solid #273a7c;border-radius: 3px 0 0 3px;font-family: Roboto,Verdana,Geneva,sans-serif;text-shadow: 0 1px 0 rgba(1, 1, 1, 0.3)",
     "background-color: transparent;color: #535;padding: 3px 3px 3px 2px;border: 1px solid #273a7c; border-radius: 0 3px 3px 0;font-family: Roboto,Verdana,Geneva,sans-serif",
     "background-color: transparent;color: #535;padding: 3px 3px 3px 2px;font-family: Roboto,Verdana,Geneva,sans-serif; font-weight: bold",
@@ -20,9 +55,16 @@ log = function (title, text) {
   );
 };
 
-error = function (title, text) {
+error = function (title, text, config) {
+  if (config === undefined) {
+    config = {};
+  }
+
+  var scope = config.scope || meta.scope || "?";
+  var topic = config.topic || meta.topic || "?";
+
   console.error(
-    `%cSRB %cWorkspaces %c` + title + " %c" + text,
+    "%c" + scope + "%c" + topic + " %c" + title + " %c" + text,
     "background-color: #ed2213;color: #fff;padding: 3px 2px 3px 3px;border: 1px solid #ed2213;border-radius: 3px 0 0 3px;font-family: Roboto,Verdana,Geneva,sans-serif;text-shadow: 0 1px 0 rgba(1, 1, 1, 0.3)",
     "background-color: transparent;color: #535;padding: 3px 3px 3px 2px;border: 1px solid #ed2213; border-radius: 0 3px 3px 0;font-family: Roboto,Verdana,Geneva,sans-serif",
     "background-color: transparent;color: #535;padding: 3px 3px 3px 2px;font-family: Roboto,Verdana,Geneva,sans-serif; font-weight: bold",
@@ -30,9 +72,16 @@ error = function (title, text) {
   );
 };
 
-warn = function (title, text) {
+warn = function (title, text, config) {
+  if (config === undefined) {
+    config = {};
+  }
+
+  var scope = config.scope || meta.scope || "?";
+  var topic = config.topic || meta.topic || "?";
+
   console.warn(
-    `%cSRB %cWorkspaces %c` + title + " %c" + text,
+    "%c" + scope + "%c" + topic + " %c" + title + " %c" + text,
     "background-color: #ed8013;color: #fff;padding: 3px 2px 3px 3px;border: 1px solid #ed8013;border-radius: 3px 0 0 3px;font-family: Roboto,Verdana,Geneva,sans-serif;text-shadow: 0 1px 0 rgba(1, 1, 1, 0.3)",
     "background-color: transparent;color: #535;padding: 3px 3px 3px 2px;border: 1px solid #ed8013; border-radius: 0 3px 3px 0;font-family: Roboto,Verdana,Geneva,sans-serif",
     "background-color: transparent;color: #535;padding: 3px 3px 3px 2px;font-family: Roboto,Verdana,Geneva,sans-serif; font-weight: bold",
@@ -163,4 +212,5 @@ module.exports = {
   warn,
   developer,
   getVersionInfo,
+  init,
 };

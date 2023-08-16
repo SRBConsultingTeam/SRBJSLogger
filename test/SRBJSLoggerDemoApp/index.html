@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="./style.css" />
     <link href="ressources/prism.css" rel="stylesheet" />
     <!--<script src="https://npmcdn.com/srbjslogger/SRBJSLogger.min.js"></script>-->
-    <script src="https://npmcdn.com/srbjslogger@1.3.17/SRBJSLogger.min.js"></script>
+    <!--<script src="https://npmcdn.com/srbjslogger@1.3.17/SRBJSLogger.min.js"></script>-->
     <script src='https://npmcdn.com/srbjslogger@1.3.17/src/qrcode-svg-ts.min.js'></script>
 
+    <script src="ressources/SRBJSLogger.min.js"></script>
     
     <script src="ressources/prism.js"></script>
 
@@ -93,20 +94,39 @@ document.head.appendChild(script);
       <h2>Documentation</h2>
 
 
-      <h3>The log function</h3>
-      <pre><code class="language-js">SRBJSLogger.log("Title", "My message")</code></pre>
-      <ui5-button id="logButton" icon="activate" icon-end style="float: right;margin-left: 10px;" >
+      <h3>The init function</h3>
+      <pre><code class="language-js">SRBJSLogger.init("SCOPE","TOPIC",{verbose: true})</code></pre>
+      <ui5-button id="initButton" icon="activate" icon-end style="float: right;margin-left: 10px;" >
           Execute
       </ui5-button>
       <ui5-badge color-scheme="6" style="margin-top: 10px;float: right;" >
         Open the console to see the result
       </ui5-badge>
-      
+      <p>
+      <b>Parameters</b><br><br>
+        <code>init(scope[String], topic[String], opt[{}])</code>
+        <ul>
+          <li><b>scope</b></li>
+          <p>Sets the scope of all log messages</p>
+          
+          <li><b>topic</b></li>
+          <p>Sets the topic of all log messages</p>
+
+          <li><b>opt</b></li>
+          <ul>
+            <li>
+              <p>This variable has to contain an object or undefined.
+                Setting the object property <code>verbose</code> to <code>true</code>, logs a badge, after the init function is processed.
+              </p>
+            </li>
+          </ul>
+        </ul>
+      </p>
 
       <script>
-        const logButton = document.getElementById("logButton");
-        logButton.addEventListener("click", () => {
-          SRBJSLogger.log("Title", "My message");
+        const initButton = document.getElementById("initButton");
+        initButton.addEventListener("click", () => {
+          SRBJSLogger.init("SCOPE","TOPIC",{verbose: true})
         });
       </script>
 
@@ -118,8 +138,52 @@ document.head.appendChild(script);
 
       <hr>
 
+      <h3>The log function</h3>
+      <pre><code class="language-js">SRBJSLogger.log("Title", "My message", { scope: "testscope", topic: "testtopic" })</code></pre>
+      <ui5-button id="logButton" icon="activate" icon-end style="float: right;margin-left: 10px;" >
+          Execute
+      </ui5-button>
+      <ui5-badge color-scheme="6" style="margin-top: 10px;float: right;" >
+        Open the console to see the result
+      </ui5-badge>
+      <p>
+      <b>Parameters</b><br><br>
+        <code>init(title[String], message[String], opt[{}])</code>
+        <ul>
+          <li><b>title</b></li>
+          <p>Sets the title ( left ) of the badge</p>
+          
+          <li><b>message</b></li>
+          <p>Sets the message ( left ) of the badge</p>
+
+          <li><b>opt</b></li>
+          <ul>
+            <li>
+              <p>This variable has to contain an object or undefined.
+                Setting the propeties <code>scope</code> and/or <code>topic</code>, of this object, overwirtes state and topic, if they were set via the <code>init</code> method
+              </p>
+            </li>
+          </ul>
+        </ul>
+      </p>
+
+      <script>
+        const logButton = document.getElementById("logButton");
+        logButton.addEventListener("click", () => {
+          SRBJSLogger.log("Title", "My message", { scope: "testscope", topic: "testtopic" });
+        });
+      </script>
+
+
+      <br><br>
+      <b>Results in</b><br><br>
+      <img src="https://unpkg.com/srbjslogger/ressources/images/logResult.png" />
+      
+
+      <hr>      
+
       <h3>The error function</h3>
-      <pre><code class="language-js">SRBJSLogger.error("Title", "My message")</code></pre>
+      <pre><code class="language-js">SRBJSLogger.error("Title", "My message", { scope: "testscope", topic: "testtopic" })</code></pre>
       
       <ui5-button id="errorButton" icon="activate" icon-end style="float: right;margin-left: 10px;">
           Execute
@@ -127,7 +191,27 @@ document.head.appendChild(script);
       <ui5-badge color-scheme="6" style="margin-top: 10px;float: right;">
         Open the console to see the result
       </ui5-badge>
-      
+            <p>
+      <b>Parameters</b><br><br>
+        <code>init(title[String], message[String], opt[{}])</code>
+        <ul>
+          <li><b>title</b></li>
+          <p>Sets the title ( left ) of the badge</p>
+          
+          <li><b>message</b></li>
+          <p>Sets the message ( left ) of the badge</p>
+
+          <li><b>opt</b></li>
+          <ul>
+            <li>
+            <p>This variable has to contain an object or undefined.
+              Setting the propeties <code>scope</code> and/or <code>topic</code>, of this object, overwirtes state and topic, if they were set via the <code>init</code> method
+            </p>
+            </li>
+          </ul>            
+        </ul>
+      </p>
+
       <script>
         const errorButton = document.getElementById("errorButton");
         errorButton.addEventListener("click", () => {
@@ -142,7 +226,7 @@ document.head.appendChild(script);
 
 
       <h3>The warn function</h3>
-      <pre><code class="language-js">SRBJSLogger.warn("Title", "My message")</code></pre>
+      <pre><code class="language-js">SRBJSLogger.warn("Title", "My message", { scope: "testscope", topic: "testtopic" })</code></pre>
       
       <ui5-button id="warnButton" icon="activate" icon-end style="float: right;margin-left: 10px;">
           Execute
@@ -150,7 +234,26 @@ document.head.appendChild(script);
       <ui5-badge color-scheme="6" style="margin-top: 10px;float: right;">
         Open the console to see the result
       </ui5-badge>
-      
+            <p>
+      <b>Parameters</b><br><br>
+        <code>init(title[String], message[String], opt[{}])</code>
+        <ul>
+          <li><b>title</b></li>
+          <p>Sets the title ( left ) of the badge</p>
+          
+          <li><b>message</b></li>
+          <p>Sets the message ( left ) of the badge</p>
+
+          <li><b>opt</b></li>
+          <ul>
+            <li>          
+              <p>This variable has to contain an object or undefined.
+                Setting the propeties <code>scope</code> and/or <code>topic</code>, of this object, overwirtes state and topic, if they were set via the <code>init</code> method
+              </p>
+            </li>
+          </ul>                 
+        </ul>
+      </p>
 
       <script>
         const warnButton = document.getElementById("warnButton");
@@ -191,7 +294,12 @@ document.head.appendChild(script);
 
       <h3>The developer function</h3>
       <pre><code class="language-js">SRBJSLogger.developer(true, {obi: "wan kenobi"});</code></pre>
-
+      <ui5-button id="developerButton" icon="activate" icon-end style="float: right;margin-left: 10px;">
+          Execute
+      </ui5-button>
+      <ui5-badge color-scheme="6" style="margin-top: 10px;float: right;">
+        Open the console to see the result
+      </ui5-badge>
       <p>
       <b>Parameters</b><br><br>
         <code>developer(showQrCode[true|false], customObject[{}])</code>
@@ -203,12 +311,7 @@ document.head.appendChild(script);
           <p>Supply a object here. The object is appended in the logoutput and also in the QRCode data like in the example below</p>
         </ul>
       </p>
-      <ui5-button id="developerButton" icon="activate" icon-end style="float: right;margin-left: 10px;">
-          Execute
-      </ui5-button>
-      <ui5-badge color-scheme="6" style="margin-top: 10px;float: right;">
-        Open the console to see the result
-      </ui5-badge>
+
       
 
       <script>

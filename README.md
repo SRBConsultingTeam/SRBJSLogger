@@ -10,7 +10,9 @@
 
 <!--<code>Testing the code</code>-->
 
-# Guide for the SRBJSLogger
+# SRBJSLogger
+
+[![](https://img.shields.io/static/v1.svg?color=f5d410\&labelColor=11215a\&logoColor=ffffff\&style=for-the-badge\&label=srb.at\&message=Blog)](https://www.srb.at/blog--events/) [![](https://img.shields.io/static/v1.svg?color=f5d410\&labelColor=11215a\&logoColor=ffffff\&style=for-the-badge\&label=srb.at\&message=Products)](https://www.srb.at/produkte/) [![](https://img.shields.io/static/v1.svg?color=f5d410\&labelColor=11215a\&logoColor=ffffff\&style=for-the-badge\&label=srb.at\&message=github\&logo=github)](https://github.com/SRBConsultingTeam/) [![](https://img.shields.io/static/v1.svg?color=f5d410\&labelColor=11215a\&logoColor=ffffff\&style=for-the-badge\&label=License\&message=MIT)](LICENSE)
 
 ## Getting started
 
@@ -65,17 +67,16 @@ Execute Open the console to see the result
 `init(scope[String], topic[String], opt[{}])`
 
 *   **scope**
-*   Sets the scope of all log messages
-*   **topic**
-*   Sets the topic of all log messages
-*   **opt**
-*   *   This variable has to contain an object or undefined. Setting the object property `verbose` to `true`, logs a badge, after the init function is processed.
 
-\
-\
-**Results in**\
-\
-![](https://unpkg.com/srbjslogger/ressources/images/logResult.png)
+    Sets the scope of all log messages
+
+*   **topic**
+
+    Sets the topic of all log messages
+
+*   **opt**
+
+    *   This variable has to contain an object or undefined. Setting the object property `verbose` to `true`, logs a badge, after the init function is processed.
 
 ***
 
@@ -92,11 +93,16 @@ Execute Open the console to see the result
 `init(title[String], message[String], opt[{}])`
 
 *   **title**
-*   Sets the title ( left ) of the badge
+
+    Sets the title ( left ) of the badge
+
 *   **message**
-*   Sets the message ( left ) of the badge
+
+    Sets the message ( left ) of the badge
+
 *   **opt**
-*   *   This variable has to contain an object or undefined. Setting the propeties `scope` and/or `topic`, of this object, overwirtes state and topic, if they were set via the `init` method
+
+    *   This variable has to contain an object or undefined. Setting the propeties `scope` and/or `topic`, of this object, overwirtes state and topic, if they were set via the `init` method
 
 \
 \
@@ -119,11 +125,16 @@ Execute Open the console to see the result
 `init(title[String], message[String], opt[{}])`
 
 *   **title**
-*   Sets the title ( left ) of the badge
+
+    Sets the title ( left ) of the badge
+
 *   **message**
-*   Sets the message ( left ) of the badge
+
+    Sets the message ( left ) of the badge
+
 *   **opt**
-*   *   This variable has to contain an object or undefined. Setting the propeties `scope` and/or `topic`, of this object, overwirtes state and topic, if they were set via the `init` method
+
+    *   This variable has to contain an object or undefined. Setting the propeties `scope` and/or `topic`, of this object, overwirtes state and topic, if they were set via the `init` method
 
 \
 \
@@ -146,11 +157,16 @@ Execute Open the console to see the result
 `init(title[String], message[String], opt[{}])`
 
 *   **title**
-*   Sets the title ( left ) of the badge
+
+    Sets the title ( left ) of the badge
+
 *   **message**
-*   Sets the message ( left ) of the badge
+
+    Sets the message ( left ) of the badge
+
 *   **opt**
-*   *   This variable has to contain an object or undefined. Setting the propeties `scope` and/or `topic`, of this object, overwirtes state and topic, if they were set via the `init` method
+
+    *   This variable has to contain an object or undefined. Setting the propeties `scope` and/or `topic`, of this object, overwirtes state and topic, if they were set via the `init` method
 
 \
 \
@@ -187,9 +203,12 @@ Execute Open the console to see the result
 `developer(showQrCode[true|false], customObject[{}])`
 
 *   **showQrCode**
-*   Displays a QRCode in the console if a value is provided resulting in `true`
+
+    Displays a QRCode in the console if a value is provided resulting in `true`
+
 *   **customObject**
-*   Supply a object here. The object is appended in the logoutput and also in the QRCode data like in the example below
+
+    Supply a object here. The object is appended in the logoutput and also in the QRCode data like in the example below
 
 \
 \

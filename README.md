@@ -12,6 +12,8 @@
 
 # SRBJSLogger
 
+[![](https://unpkg.com/srbjslogger/ressources/images/srb_logo.png)](https://www.srb.at)\
+\
 [![](https://img.shields.io/static/v1.svg?color=f5d410\&labelColor=11215a\&logoColor=ffffff\&style=for-the-badge\&label=srb.at\&message=Blog)](https://www.srb.at/blog--events/) [![](https://img.shields.io/static/v1.svg?color=f5d410\&labelColor=11215a\&logoColor=ffffff\&style=for-the-badge\&label=srb.at\&message=Products)](https://www.srb.at/produkte/) [![](https://img.shields.io/static/v1.svg?color=f5d410\&labelColor=11215a\&logoColor=ffffff\&style=for-the-badge\&label=srb.at\&message=github\&logo=github)](https://github.com/SRBConsultingTeam/) [![](https://img.shields.io/static/v1.svg?color=f5d410\&labelColor=11215a\&logoColor=ffffff\&style=for-the-badge\&label=NPM\&message=srbjslogger\&logo=npm)](https://www.npmjs.com/package/srbjslogger) [![](https://img.shields.io/static/v1.svg?color=f5d410\&labelColor=11215a\&logoColor=ffffff\&style=for-the-badge\&label=License\&message=MIT)](LICENSE)
 
 ## Getting started

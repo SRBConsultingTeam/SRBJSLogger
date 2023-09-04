@@ -1,6 +1,6 @@
 {
   "name": "srbjslogger",
-  "version": "1.4.5",
+  "version": "1.4.7",
   "description": "SRB logging library for javascript",
   "main": "src/index.js",
   "scripts": {
@@ -13,7 +13,13 @@
   "keywords": [
     "logger",
     "srb",
-    "log"
+    "log",
+    "ui5",
+    "javascript",
+    "js",
+    "sap",
+    "sapui5",
+    "openui5"
   ],
   "author": "Michael Henninger - SRB Consulting Team GmbH <m.henninger@srb.at> (https://www.srb.at/)",
   "license": "MIT",

@@ -16,6 +16,22 @@
 \
 [![](https://img.shields.io/static/v1.svg?color=f5d410\&labelColor=11215a\&logoColor=ffffff\&style=for-the-badge\&label=srb.at\&message=Blog)](https://www.srb.at/blog--events/) [![](https://img.shields.io/static/v1.svg?color=f5d410\&labelColor=11215a\&logoColor=ffffff\&style=for-the-badge\&label=srb.at\&message=Products)](https://www.srb.at/produkte/) [![](https://img.shields.io/static/v1.svg?color=f5d410\&labelColor=11215a\&logoColor=ffffff\&style=for-the-badge\&label=srb.at\&message=github\&logo=github)](https://github.com/SRBConsultingTeam/) [![](https://img.shields.io/static/v1.svg?color=f5d410\&labelColor=11215a\&logoColor=ffffff\&style=for-the-badge\&label=NPM\&message=srbjslogger\&logo=npm)](https://www.npmjs.com/package/srbjslogger) [![](https://img.shields.io/static/v1.svg?color=f5d410\&labelColor=11215a\&logoColor=ffffff\&style=for-the-badge\&label=License\&message=MIT)](LICENSE)
 
+## Motivation
+
+A while ago I came across this very interesting [blog](https://www.bennadel.com/blog/3941-styling-console-log-output-formatting-with-css.htm").
+
+I immediately noticed that the content of the Browser Developer Console certainly does not correspond to what I was previously familiar with
+
+Of course, I was intrigued and wanted to try and spice up the content of the browser console a bit myself.
+
+Of course with the ulterior motive that I wanted to better separate the log outputs of our UI5 applications from standard log outputs anyway. It should also be easier for our customers to distinguish really important logs from "standard warnings" etc.
+
+Said and done. The result of my considerations is [the following library](https://www.npmjs.com/package/srbjslogger).
+
+**Features:**\
+A number of JS methods that allow us to create very prominent log outputs.\
+With the creation of the library, I also implemented a requirement that was long overdue. With the command `SRBJSLogger.developer(true, {obi: "wan kenobi"});` very important details for us are displayed in the browser log. Among other things, "which browser is used", "screen size" etc. A very nice feature is setting the first parameter to true. If this parameter is activated, the browser console provides a QR code with the content of the most important application information. ( Additional data can also be packed into the QR code - see "Obi Wan Kenobi" )
+
 ## Getting started
 
 **Initialize the SRBJSLogger via the NPM CDN:**
